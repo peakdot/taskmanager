@@ -1,0 +1,177 @@
+#container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-size:auto 100%;  
+	background-position:center top;
+}
+
+#board-picker {
+	position: absolute;
+	display: flex;
+	bottom: -150px;
+	left: 0;
+	width: 100%;
+	height: 150px;
+	transition: ease 0.2s;
+	z-index: 1;
+}
+
+#board-picker.active {
+	bottom: 0px;
+	transition: ease 0.2s;
+}
+
+#board-picker .board {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	max-width: 120px;
+	min-width: 80px;
+}
+
+#board-picker .board .board-body {
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	height: 100px;
+	width: 100%;
+	background-color: white;
+	overflow: hidden;
+	border-radius: 2px;
+}
+
+#board-picker .board>.board-name {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	padding: 5px;
+	color: black;
+	text-align: center;
+}
+#board-picker .board .board-add{
+	display: none;
+}
+
+#board-picker-toggler {
+	cursor: pointer;
+	position: absolute;
+	top: -35px;
+	left: 50%;
+	height: 35px;
+	width: 80px;
+	overflow: visible;
+	text-align: center;
+	background-color: grey;
+}
+
+#container>.board {
+	display: block;
+	position: absolute;
+	transition: ease 0.2s; 
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+#container>.board.active .board-body {
+	transform: scaleX(1) scaleY(1);
+	transition: transform ease 0.2s;
+}
+
+#container>.board.notavailable .board-body {
+	transform: scaleX(0.9) scaleY(0.9);
+	transition: transform ease 0.2s;
+	background-color: #ffcccc;
+}
+
+#container>.board .board-body {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	overflow: hidden;
+	border-radius: 2px;
+	transition: transform ease 0.2s;
+}
+
+#container>.board>.board-name {
+	display: none;
+}
+
+#container>.board .board-add {
+	cursor: pointer;
+	position: absolute;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	top: 5px;
+	right: 5px;
+	width: 24px;
+	height: 24px;
+	border-radius: 2px;
+}
+
+#container>.board:hover .board-add {
+	display: flex;
+}
+
+#container>.board .board-add:hover{
+	background-color: rgba(0, 0, 0, 0.12);
+}
+
+#board-menu {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity ease 0.2s, visibility linear 0s 0.2s;
+	z-index: 1;
+}
+
+#board-menu.active {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity ease 0.2s 0.2s, visibility linear 0s;
+}
+
+#board-menu div {
+	text-align: center;
+	padding: 10px 20px 10px 20px;
+	cursor: pointer;
+	transition: background-color ease 0.2s;
+}
+
+#board-menu div:hover {
+	background-color: rgba(0, 0, 0, 0.12);
+	transition: background-color ease 0.2s;
+}
+
+.edit {
+	background-color: #ff9900;
+	transition: transform ease 0.2s, opacity ease 0.2s, visibility linear 0s 0.2s, background-color 0.2s;
+}
+
+.edit.switched {
+	background-color: green;
+	transition: background-color 0.2s;
+	transition: transform ease 0.2s, opacity ease 0.2s, visibility linear 0s 0.2s, background-color 0.2s;
+}
+
+.edit.active {
+	transition: transform ease 0.2s 0.2s, opacity ease 0.2s 0.2s, visibility linear 0s, background-color 0.2s;
+}
+
+.edit.switched.active {
+	transition: transform ease 0.2s 0.2s, opacity ease 0.2s 0.2s, visibility linear 0s, background-color 0.2s;
+}
+
+
